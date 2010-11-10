@@ -1,0 +1,60 @@
+body div#fancy_zoom {
+	background-color: #fff;
+	color: #000;
+/*	display: none;
+*/	z-index: 999999;
+	padding: 3em 0 3em;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 2px 2px 10px #000000;
+	-moz-box-shadow: 2px 2px 10px #000000;
+	-o-box-shadow: 2px 2px 10px #000000;
+	box-shadow: 2px 2px 10px #000000;
+	position: fixed !important; /* IE6 hack - ignores !important rule */
+	position: absolute;
+	background-position: center bottom;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	top: 50%;
+	left: 50%;
+}
+
+body div#fancy_zoom.zooming {
+	-webkit-transition-property: -webkit-transform, opacity, top, left;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-in-out;
+}
+
+body div#fancy_zoom.zoom-start {
+	-webkit-transform: scale(10);
+	opacity: 0;
+}
+
+body div#fancy_zoom.zoom-end {
+	opacity: 1;
+	-webkit-transform: scale(1);
+}
+
+body div#fancy_zoom.zoom-out {
+	opacity: 0;
+	-webkit-transform: scale(0);
+}
+
+div#fancy_zoom header {
+	padding: 0 35px;
+	display: block;
+}
+
+div#fancy_zoom div#fancy_zoom_content {
+	overflow: auto;
+	padding: 0 3em;
+}
+
+div#fancy_zoom header a {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	border: 0;
+}
